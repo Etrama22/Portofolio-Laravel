@@ -1,0 +1,176 @@
+* {
+    font-family: "Ubuntu", sans-serif;
+}
+ul {
+    list-style: none;
+}
+.sidebar {
+    background-color: #111827;
+    width: 260px;
+    padding: 24px;
+    box-sizing: border-box;
+    transition: all ease-in-out 0.8s;
+}
+
+.header {
+    width: 212px;
+    padding: 12px 10px 10px 3px;
+    box-sizing: border-box;
+}
+
+.sidebar .main .description {
+    margin: 13px;
+}
+
+.sidebar.hide .description {
+    display: none;
+}
+
+.sidebar .main .list-item {
+    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.sidebar .main .list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 10px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: all ease-in 0.2s;
+}
+
+.sidebar.hide {
+    width: 87px;
+    transition: all ease-in-out 0.8s;
+}
+
+.sidebar .main .list-item:hover {
+    background: #f90;
+    transition: all ease-in 0.2s;
+}
+
+.content {
+    width: auto;
+    background-color: #00012e;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+#button {
+    width: 32px;
+    text-align: center;
+    overflow: hidden;
+}
+
+#menu-label {
+    position: relative;
+    display: block;
+    height: 20px;
+    cursor: pointer;
+}
+
+#menu-checkbox {
+    display: none;
+}
+
+#hamburger,
+#menu-label:after,
+#menu-label:before {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ffffff;
+}
+
+#menu-label:after,
+#menu-label:before {
+    content: "";
+    transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#menu-label:before {
+    top: 0;
+}
+
+#menu-label:after {
+    top: 8px;
+}
+
+#hamburger {
+    top: 18px;
+}
+
+#hamburger:before {
+    content: "MENU";
+    position: absolute;
+    top: 5px;
+    right: 0;
+    left: 0;
+    color: #ffffff;
+    font-size: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#menu-checkbox:checked + #menu-label::before {
+    left: -39px;
+}
+
+#menu-checkbox:checked + #menu-label::after {
+    left: 39px;
+}
+
+#menu-checkbox:checked + #menu-label #hamburger::before {
+    animation: moveUpThenDown 0.8s ease 0.2s forwards,
+        shakeUp 0.8s ease 0.2s forwards, shakeDown 0.8s ease 0.2s;
+}
+
+@keyframes moveUpThenDown {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: -27px;
+    }
+    100% {
+        top: -14px;
+    }
+}
+
+@keyframes shakeUp {
+    0% {
+        transform: rotateZ(0);
+    }
+    25% {
+        transform: rotateZ(-10deg);
+    }
+    50% {
+        transform: rotateZ(0);
+    }
+    75% {
+        transform: rotateZ(-10deg);
+    }
+    100% {
+        transform: rotateZ(0);
+    }
+}
+
+@keyframes shakeDown {
+    0% {
+        transform: rotateZ(0);
+    }
+    80% {
+        transform: rotateZ(3deg);
+    }
+    90% {
+        transform: rotateZ(-3deg);
+    }
+    100% {
+        transform: rotateZ(0);
+    }
+}
