@@ -15,10 +15,6 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'welcome'])->name('home');
@@ -35,4 +31,4 @@ Route::get('/home', function () {
 
 Route::resource('/Portofolio', PortofolioController::class);
 
-Route::get('/myportofolio', [App\Http\Controllers\PortofolioController::class, 'myPortofolio'])->name('portofolio');
+Route::get('/', [App\Http\Controllers\PortofolioController::class, 'myPortofolio'])->name('portofolio');

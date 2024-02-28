@@ -314,7 +314,7 @@ return [
         ['header' => 'account_settings'],
         [
             'text' => 'My Portofolio',
-            'url' => 'myportofolio',
+            'url' => '/',
             'icon' => 'fas fa-fw fa-user',
         ],
         [

@@ -19,7 +19,7 @@ class PortofolioController extends Controller
             ->where('skill', 'LIKE', '%' . $searchValue . '%')
             ->paginate($p->perPage());
 
-        return view('Portofolio.portofolio', compact('portofolio'))
+        return view('welcome', compact('portofolio'))
             ->with('i', (request()->input('page', 1) - 1) * $p->perPage());
     }
     /**
